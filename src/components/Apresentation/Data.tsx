@@ -3,11 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 import button from "./Arrays/buttons";
 import stepsData from "./Arrays/stepsData";
+import { useNavigate } from "react-router-dom";
 
 
 export const Data = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [currentButton, setCurrentButton] = useState(0);
+  const navigate = useNavigate();
 
   const handleSetCurrentStep = (index: number) => {
     setCurrentStep(index);
@@ -17,6 +19,10 @@ export const Data = () => {
     const nextButton: number = currentStep + 1;
     setCurrentButton(nextButton);
     handleSetCurrentStep(nextButton);
+
+    if (nextButton === 3) {
+      navigate('/login')
+    }
   };
 
   const handleReturnArrow = () => {
