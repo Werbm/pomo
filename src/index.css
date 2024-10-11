@@ -13,14 +13,14 @@
 }
 
 .circle {
-  @apply bg-gray-400 w-4 h-4 rounded-full
+  @apply bg-gray-400 w-4 h-4 rounded-full hover:bg-primary transition
 }
 
 .elipse {
-  @apply w-10 h-4 rounded-3xl bg-primary
+  @apply w-8 h-4 rounded-3xl bg-primary transition-all
 }
 
 .primary-button {
-  @apply w-80 h-11 rounded-3xl bg-primary hover:shadow-btnShadow
+  @apply w-80 h-11 rounded-3xl bg-primary hover:shadow-btnShadow transition duration-200 ease-in-out
 }
 
