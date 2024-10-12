@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
-import button from "./Arrays/buttons";
 import stepsData from "./Arrays/stepsData";
 import { useNavigate } from "react-router-dom";
 
@@ -49,10 +48,10 @@ export const Data = () => {
           </span>
         </section>
         <section className="flex justify-center items-center p-4 gap-3">
-          {button.map((btn, index) => {
+          {stepsData.map((btn, index) => {
             return (
               <button
-              key={btn.id}
+              key={btn.title}
                 onClick={() => {
                   handleSetCurrentStep(index);
                   setCurrentButton(index);
