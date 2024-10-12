@@ -4,17 +4,17 @@ import ThirdImage from "../../../assets/third-apresentation-img.png";
 
 const stepsData = [
     {
-      title: "Pomo",
+      title: "Pomo1",
       description: "Easy task & work management with pomo",
       imgUrl: FirstImage,
     },
     {
-      title: "Pomo",
+      title: "Pomo2",
       description: "Track your producitvity & gain insights",
       imgUrl: SecondImage,
     },
     {
-      title: "Pomo",
+      title: "Pomo3",
       description: "Boost your productivity now & be successful",
       imgUrl: ThirdImage,
     },

@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
 import stepsData from "./Arrays/stepsData";
 import { useNavigate } from "react-router-dom";
-
 
 export const Data = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -20,20 +19,28 @@ export const Data = () => {
     handleSetCurrentStep(nextButton);
 
     if (nextButton === 3) {
-      navigate('/login')
+      navigate("/login");
     }
   };
 
   const handleReturnArrow = () => {
     const nextButton: number = currentStep - 1;
-    setCurrentButton(nextButton)
-    handleSetCurrentStep(nextButton)
-  }
+    setCurrentButton(nextButton);
+    handleSetCurrentStep(nextButton);
+  };
 
   return (
     <>
-    {currentButton >= 1 ? <FontAwesomeIcon className="w-10 h-10 absolute top-4 md:top-20 md:left-8 left-4 z-10 hover:text-primary cursor-pointer transition animate-fade-left" onClick={handleReturnArrow} icon={faArrowLeft} /> : ''}
-    
+      {currentButton >= 1 ? (
+        <FontAwesomeIcon
+          className="w-10 h-10 absolute top-4 md:top-20 md:left-8 left-4 z-10 hover:text-primary cursor-pointer transition animate-fade-left"
+          onClick={handleReturnArrow}
+          icon={faArrowLeft}
+        />
+      ) : (
+        ""
+      )}
+
       <section className="w-full h-screen flex flex-col justify-center items-center gap-5">
         <section className="w-96 h-80">
           <img
@@ -51,14 +58,13 @@ export const Data = () => {
           {stepsData.map((btn, index) => {
             return (
               <button
-              key={btn.title}
+                key={btn.title}
                 onClick={() => {
                   handleSetCurrentStep(index);
-                  setCurrentButton(index);
                 }}
               >
                 <div
-                  className={currentButton === index ? "elipse" : "circle"}
+                  className={currentStep === index ? "elipse" : "circle"}
                 ></div>
               </button>
             );
